@@ -1,0 +1,14 @@
+name: Nginx Deploy Kubernetes
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Nginx YAML dosyasını deploy et
+        run: |
+          cd /home/Pipeline
+          kubectl apply -f nginx-deployment.yaml

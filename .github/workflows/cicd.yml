@@ -2,8 +2,8 @@ name: CI/CD Pipeline for Nginx
 
 on:
   push:
-    branches: [ main ]    # Sadece main branch'e push olduğunda tetiklenir
-  workflow_dispatch:      # Elle de tetikleyebilirsin
+    branches: [ main ]
+  workflow_dispatch:
 
 jobs:
   ci-cd:

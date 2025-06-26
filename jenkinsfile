@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    environment {
+        // Jenkins agent'ın erişebileceği kubeconfig dosyasının yolu
+        KUBECONFIG = "/var/jenkins_home/.kube/config"
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+        stage('Deploy Nginx to Kubernetes') {
+            steps {
+                sh 'kubectl apply -f nginx-deployment.yaml'
+            }
+        }
+    }
+}

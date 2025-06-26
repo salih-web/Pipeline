@@ -2,7 +2,6 @@ pipeline {
     agent any
 
     environment {
-        // Jenkins agent'ın erişebileceği kubeconfig dosyasının yolu
         KUBECONFIG = "/var/jenkins_home/.kube/config"
     }
 
